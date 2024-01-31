@@ -1,4 +1,4 @@
-//import key from './key.js'
+import key from './key.js'
 
 const ul = document.querySelector('ul');
 const convertButton = document.querySelector('.btn')
@@ -8,7 +8,7 @@ let currenciesObject;// Decaring currencies globally
 // Function to fetch currencies from the API
 const fetchCurrencies = async() => {
     // Fetching data from the API
-    const response = await fetch('https://v6.exchangerate-api.com/v6/eeb276b04a6641fb125d883b/latest/NPR')
+    const response = await fetch(`https://v6.exchangerate-api.com/v6/${key}/latest/NPR`)
     const data = await response.json()
     //console.log(data)
     // Storing the conversion rates in currenciesObject
@@ -46,9 +46,9 @@ const renderCurencies = (data, amount=1)=>{
 }
 
 //creating an array of objects from currenciesObject
-for(let key in currenciesObject){
+/*for(let key in currenciesObject){
         const values = currenciesObject[key];
         const newObject = {};
         newObject[key] = values
         currenciesArray.push(newObject)
-     }
+     }*/
